@@ -16,11 +16,12 @@
       jogar = true;
       jogarNovamente();
       atualizaPlacar(0, 0);
-      //mostra o botao jogarnovamente alterando a classe css (className)
       btnJogarNovamente.className = 'invisivel';
-      //oculta o botao reiniciar alterando a classe css (className)
       btnReiniciar.className = 'invisivel';
       
+      // Remove o modo dark e a mensagem de derrota
+      document.body.classList.remove('perdeu');
+     
     }
 
     //funçao jogar novamente
@@ -90,12 +91,22 @@
 
 
         //verifica se jogou 5 vezes
-        if (tentativas == 5) {
-          //oculta o botao joganovamente alterando a classe css (getElementById e className)
-          btnJogarNovamente.className = 'invisivel';
-          //mostra o botao reiniciar alterando a classe css (getElementById e className)
-          btnReiniciar.className = 'visivel';
-        }
+       //verifica se jogou 5 vezes
+if (tentativas == 5) {
+  //oculta o botao joganovamente alterando a classe css (getElementById e className)
+  btnJogarNovamente.className = 'invisivel';
+  //mostra o botao reiniciar alterando a classe css (getElementById e className)
+  btnReiniciar.className = 'visivel';
+  
+  // Verifica se o desempenho é 0%
+  if (desempenho === 0) {
+    document.body.classList.add('perdeu');
+    const mensagemDerrota = document.createElement('div');
+    mensagemDerrota.className = 'mensagem-derrota visivel';
+    mensagemDerrota.textContent = 'Você Perdeu!';
+    document.getElementById('principal').prepend(mensagemDerrota);
+  }
+}
         //a variável sorteado recebe um valor inteiro (Math.floor) aleatório (Math.random) e acima de 0 (+1)
         let sorteado = Math.floor(Math.random() * 4)+1;
         //se o id da <div> escolhida pelo jogador for igual ao número sorteado
