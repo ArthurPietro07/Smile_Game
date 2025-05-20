@@ -74,6 +74,7 @@
       //adiciona a imagem criada na div (obj) escolhida pelo jogador (appendChild)
       obj.appendChild(img);
       
+      
     }
 
     //Função que sorteia um número aleatório entre 1 e 5 e verifica se o jogador acertou
@@ -103,6 +104,13 @@
           acertou(obj);
           //incrementa o contador de acertos
           acertos++;
+          // Efeito de confetes
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
+      });
         } else {//se errou a tentativa
           //altera a classe da <div> escolhida pelo jogador para a classe errou
           obj.className = "errou";
