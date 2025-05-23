@@ -186,6 +186,75 @@ button:hover::after {
   display: inline;
 }
 
+.footer-minimalista {
+  color: #ecf0f1;
+  padding: 25px 0;
+  margin-top: 40px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+.autor {
+  color: #e67676;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.autor:hover {
+  text-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  color: #ecf0f1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon svg {
+  transition: all 0.3s ease;
+}
+
+/* Instagram - Gradiente de cores ao passar o mouse */
+.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.instagram:hover svg {
+  color: white;
+}
+
+/* GitHub - Cor oficial ao passar o mouse */
+.github:hover {
+  background-color: #333;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.github:hover svg {
+  color: white;
+}
+
 /* Animações */
 @keyframes pulse {
   0% { transform: scale(1); }
@@ -226,7 +295,6 @@ body.perdeu #reiniciar {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 .mensagem-derrota {
   font-size: 2.5rem;
