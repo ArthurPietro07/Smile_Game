@@ -4,8 +4,8 @@ let tentativas = 0;
 let acertos = 0;
 let jogar = true;
 const somClique = new Audio('https://cdn.freesound.org/previews/256/256113_3263906-lq.mp3');
-const somPerdeu = new Audio('../audios/Sad Trombone.mp3')
-const somGanhou = new Audio('../audios/1gift-confetti.mp3')
+const somPerdeu = new Audio('./audios/Sad Trombone.mp3')
+const somGanhou = new Audio('./audios/1gift-confetti.mp3')
 
 
 //captura os botoes pelos ids e adiciona um evento de clique

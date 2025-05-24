@@ -486,14 +486,3 @@ body.perdeu #reiniciar {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-.mensagem-derrota {
-  font-size: 2.5rem;
-  color: #ff0000;
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-  margin: 20px 0;
-  animation: pulse 0.5s infinite alternate;
-  display: none;
-  font-family: 'Fredoka One', cursive;
-}
-
