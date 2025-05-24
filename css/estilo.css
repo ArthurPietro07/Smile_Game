@@ -497,24 +497,3 @@ body.perdeu #reiniciar {
   font-family: 'Fredoka One', cursive;
 }
 
-/* Efeito de confete para vitória */
-.confetti {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background-color: #f00;
-  opacity: 0;
-  z-index: 1000;
-  animation: confetti 5s ease-in-out;
-}
-
-@keyframes confetti {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(1000px) rotate(720deg);
-    opacity: 0;
-  }
-}
