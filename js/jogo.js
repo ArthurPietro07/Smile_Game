@@ -67,17 +67,26 @@ function atualizaPlacar(acertos, tentativas) {
 
 }
 
+//funçao que cria uma imagem
+function criarImagem(src, id, largura = 100) {
+  const img = new Image(largura);
+  img.src = src;
+  img.id = id;
+  return img;
+}
+
+
 //funçao executada quando o jogador acertou
 function acertou(obj) {
   //altera a classe CSS da <div> escolhida pelo jogador (className)
   obj.className = "acertou";
   //Criar uma constante img que armazena um novo objeto imagem com largura de 100px
-  const img = new Image(100);
-  img.id = "imagem";
-  //altera o atributo src (source) da imagem criada
-  img.src = "https://upload.wikimedia.org/wikipedia/commons/2/2e/Oxygen480-emotes-face-smile-big.svg";
-  //adiciona a imagem criada na div (obj) escolhida pelo jogador (appendChild)
+  const img = criarImagem(
+    "https://upload.wikimedia.org/wikipedia/commons/2/2e/Oxygen480-emotes-face-smile-big.svg",
+    "imagem"
+  );
   obj.appendChild(img);
+  
 
 
 }
@@ -132,16 +141,15 @@ function verifica(obj) {
       //altera a classe da <div> escolhida pelo jogador para a classe errou
       obj.className = "errou";
       // cria uma const que armazena uma nova imagem
-      const img_erro = new Image(100);
-       img_erro.id = "imagem_erro";
+      const img_erro = criarImagem(
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Fluent_Emoji_flat_1f625.svg/640px-Fluent_Emoji_flat_1f625.svg.png",
+        "imagem_erro"
+      );
+      obj.appendChild(img_erro);
       //toca o audio de erro
       somClique.play();
       //reinicia o som para o inicio
       somClique.currentTime = 0;
-      //altera o atributo src (source) da imagem criada
-      img_erro.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Fluent_Emoji_flat_1f625.svg/640px-Fluent_Emoji_flat_1f625.svg.png";
-      //adiciona a imagem criada na div (obj) escolhida pelo jogador (appendChild)
-      obj.appendChild(img_erro);
       //armazena a div aonde Smile está escondido (getElementById)
       const objSorteado = document.getElementById(sorteado);
       //chama a funçao acertou para mostrar a div aonde está o Smile
